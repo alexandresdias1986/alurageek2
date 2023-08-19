@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AluraGeek</title></head>
+
+<body>
+  <header>
+    <div class="topo largura-limitada">
+      <img class="topo__logo" src="./assets/img/logo.png" alt="Logo do AluraGeek">
+      <div class="topo__div">
+        <div class="topo__pesquisa">
+          <input class="topo__input-pesquisa" type="text" placeholder="O que deseja encontrar?" data-pesquisa>
+          <button class="topo__botao-pesquisa" data-botao-pesquisa><img src="./assets/img/lupa.svg" alt="Lupa"></button>
+        </div>
+
+        <a href="./assets/pages/login.html" class="topo__link">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="secao-banner">
+      <div class="banner__conteudo largura-limitada">
+        <h1 class="banner__titulo">Dezembro Promocional</h1>
+        <h2 class="banner__descricao">Produtos selecionados com 33% de desconto</h2>
+        <a href="#consoles" class="banner__link">Ver Consoles</a>
+      </div>
+    </section>
+
+    <section class="secao-produtos">
+      <div class="produtos-content largura-limitada">
+        <div class="produtos__header">
+          <h3 class="produtos__titulo" >Star Wars</h3>
+          <a href="./assets/pages/login.html" class="produtos__link">Ver tudo</a>
+        </div>
+        <div class="produtos" data-produtos-star>
+        </div>
+        <div class="produtos__header" id="consoles">
+          <h3 class="produtos__titulo">Consoles</h3>
+          <a href="./assets/pages/login.html" class="produtos__link">Ver tudo</a>
+        </div>
+        <div class="produtos" data-produtos-consoles>
+        </div>
+        <div class="produtos__header">
+          <h3 class="produtos__titulo">Diversos</h3>
+          <a href="./assets/pages/login.html" class="produtos__link">Ver tudo</a>
+        </div>
+        <div class="produtos" data-produtos-diversos>
+        </div>
+      </div>
+    </section>
+</main>
+  <footer>
+    <section class="secao-footer">
+      <div class="foot-content largura-limitada">
+        <section class="informacoes">
+          <img src="./assets/img/logo.png" alt="Logo da Alura" class="informacoes__logo">
+          <nav class="informacoes__nav">
+            <ul class="informacoes__lista">
+              <li class="informacoes__item"><a href="" class="informacoes__link">Quem somos nós</a></li>
+              <li class="informacoes__item"><a href="" class="informacoes__link">Política de privacidade</a></li>
+              <li class="informacoes__item"><a href="" class="informacoes__link">Programa fidelidade</a></li>
+              <li class="informacoes__item"><a href="" class="informacoes__link">Nossas lojas</a></li>
+              <li class="informacoes__item"><a href="" class="informacoes__link">Quero ser franqueado</a></li>
+              <li class="informacoes__item"><a href="" class="informacoes__link">Anuncie aqui</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="contato">
+          <h3 class="contato__titulo">Fale conosco</h3>
+          <form action="" class="contato__formulario">
+            <div class="formulario__campo">
+
+              <label class="formulario__label-nome">Nome</label>
+              <input type="text" class="formulario__nome">
+
+            </div>
+            <textarea class="formulario__mensagem" placeholder="Escreva sua mensagem"></textarea>
+            <button class="formulario__botao">Enviar mensagem</button>
+          </form>
+        </section>
+      </div>
+    </section>
+    <section class="footer">
+      <p class="footer__texto">Desenvolvido por Alexandre Dias<br />2023</p>
+    </section>
+  </footer>
+  <script src="./assets/js/exibeElementosFiltrados.js" type="module"></script>
+  <script src="./assets/js/buscaProduto.js" type="module"></script>
+</body>
+
+</html>
