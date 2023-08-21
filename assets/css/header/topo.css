@@ -3,4 +3,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+
+    height: 7rem;
+
+}.topo{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+  }

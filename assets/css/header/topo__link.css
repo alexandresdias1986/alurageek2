@@ -1,0 +1,11 @@
+.topo__link{
+    color: var(--azul);
+    border: 1px solid var(--azul);
+    padding: 1rem 4rem;
+    text-decoration: none;
+  }
+  @media screen and (width < 468px) {
+    .topo__link{
+      padding: 1rem 2rem;
+    }
+  }

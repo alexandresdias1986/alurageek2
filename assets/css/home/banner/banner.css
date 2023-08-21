@@ -3,9 +3,9 @@
     background: url(../../../img/banner.webp) no-repeat top / cover;
     display: flex;
    justify-content: center;
-   align-items: center;
+   align-items:center;
    position: relative;
-   width: 1440px;
+   width: 100%;
 
 }
    .secao-banner::before{
