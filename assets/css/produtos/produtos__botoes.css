@@ -1,0 +1,10 @@
+.produtos__botoes{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .produtos__botao{
+    all: unset;
+    cursor: pointer;
+    margin-left: 5px;
+  }

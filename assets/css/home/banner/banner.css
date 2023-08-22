@@ -2,10 +2,10 @@
     height: 352px;
     background: url(../../../img/banner.webp) no-repeat top / cover;
     display: flex;
-   justify-content: center;
-   align-items:center;
-   position: relative;
-   width: 100%;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+   
 
 }
    .secao-banner::before{
@@ -26,4 +26,12 @@
     justify-content: space-between;
     padding-bottom: 3rem;
     position: relative;
+  }
+
+  @media screen and (width < 468px){
+    .secao-banner{
+      height: 30vh;
+      background-position: center;
+      background-size: cover;
+    }
   }
