@@ -1,0 +1,11 @@
+.informacoes__lista{
+    list-style: none;
+    margin-right: 3rem;
+}
+
+@media screen and (width<468px) {.informacoes-lista{
+    width: 100%;
+    text-align: center;
+}
+    
+}
