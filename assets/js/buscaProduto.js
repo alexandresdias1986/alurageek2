@@ -1,53 +1,31 @@
-import { converteDados } from "./converteDados.js";
+import { acessoApi } from "./acessaApi.js";
+import exibeElementos from "./exibeElementos.js"
 
-async function listaDeProdutos() {
-  const listaAcessada = await fetch("https://64cbf6502eafdcdc85198627.mockapi.io/produtos");
-  const listaConvertida = await listaAcessada.json();
+async function buscarVideo(e) {
+  e.preventDefault();
+  const campoPesquisa = document.querySelector("[data-pesquisa");
 
-  return listaConvertida;
-}
-
-async function criaProduto(title, categoria, imagem, preco) {
-  const listaAcessada = await fetch("https://64cbf6502eafdcdc85198627.mockapi.io/produtos", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify({
-      name: title,
-      categoria: categoria,
-      imagem: imagem,
-      preco: preco,
-      id: converteDados.id
-    }),
-  });
-  if (!listaAcessada.ok) {
-    throw new Error("Não foi possivel enviar o produto");
+  if (window.innerWidth < 500) {
+    campoPesquisa.style.display = 'block';
+    campoPesquisa.style.paddingLeft = '10px'
   }
-  const listaConvertida = listaAcessada.json();
+  const termoPesquisado = document.querySelector("[data-pesquisa]").value;
+  const busca = await acessoApi.buscaProduto(termoPesquisado);
 
-  return listaConvertida;
+  const produtos = document.querySelector("[data-produtos]");
+
+  while (produtos.firstChild) {
+      produtos.removeChild(produtos.firstChild);
+  }
+
+  busca.forEach(elemento => produtos.appendChild(
+    exibeElementos(elemento.name, elemento.preco, elemento.imagem, elemento.id)))
+  
+  if (busca.length == 0) {
+      produtos.innerHTML = `<h2 class="mensagem__titulo">Não existem vídeos com esse termo</h2>`
+  }
 }
 
-async function filtraCategoria(categoria) {
-  const lista = await listaDeProdutos();
-  const listaFiltrada = lista.filter(
-    (produto) => produto.categoria === categoria
-  );
+const botaoDePesquisa = document.querySelector("[data-botao-pesquisa]");
 
-  return listaFiltrada;
-}
-
-async function buscaProduto(termoDeBusca) {
-  const acessoApi = await fetch(`https://64cbf6502eafdcdc85198627.mockapi.io/produtos?q=${termoDeBusca}`);
-  const acessoConvertido = await acessoApi.json();
-
-  return acessoConvertido;
-}
-
-export const acessoApi = {
-  listaDeProdutos,
-  filtraCategoria,
-  criaProduto,
-  buscaProduto
-};
+botaoDePesquisa.addEventListener("click", evento => buscarVideo(evento))
